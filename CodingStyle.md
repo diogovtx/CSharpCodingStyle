@@ -22,7 +22,6 @@ General Rules
 12. We use PascalCasing for all method names, including local functions.
 13. We use ```nameof( ... )``` instead of ```"..."``` whenever possible and relevant. More about [nameof()](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/nameof).
 14. Fields should be specified at the top within type declarations.
-15. When including non-ASCII characters in the source code use Unicode escape sequences (\uXXXX) instead of literal characters. Literal non-ASCII characters occasionally get garbled by a tool or editor.
 16. When using labels (for goto), indent the label one less than the current indentation.
 17. When using #if #else #elif #endif, indent the expression one less than the current indentation.
 18. When using a single-statement if, we follow these conventions:
