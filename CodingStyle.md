@@ -43,7 +43,7 @@ Whitespaces
 11. Space between a unary operator and its operand. One space between the operator and each operand of all other operators.
 12. Line continuations are indented.
 13. Line breaks with braces (e.g. list initializers, lambdas, object initializers, etc) do not count as continuations.
-14. For function definitions and calls, if the arguments do not all fit on one line they should be broken up onto multiple lines, with each subsequent line aligned with the first argument. If there is not enough room for this, arguments may instead be placed on subsequent lines with a four space indent.
+14. For function definitions and calls, if the arguments do not all fit on one line they should be broken up onto multiple lines, one parameter per line.
 
 An [EditorConfig](https://editorconfig.org "EditorConfig homepage") file (`.editorconfig`) has been provided at the root of the runtime repository, enabling C# auto-formatting conforming to the above guidelines.
 
