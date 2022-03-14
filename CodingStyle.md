@@ -22,12 +22,12 @@ General Rules
 12. We use PascalCasing for all method names, including local functions.
 13. We use ```nameof( ... )``` instead of ```"..."``` whenever possible and relevant. More about [nameof()](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/nameof).
 14. Fields should be specified at the top within type declarations.
-16. When using labels (for goto), indent the label one less than the current indentation.
-17. When using #if #else #elif #endif, indent the expression one less than the current indentation.
-18. When using a single-statement if, we follow these conventions:
+15. When using labels (for goto), indent the label one less than the current indentation.
+16. When using #if #else #elif #endif, indent the expression one less than the current indentation.
+17. When using a single-statement if, we follow these conventions:
     - Never use single-line form (for example: `if ( source == null ) throw new ArgumentNullException( "source" );`)
     - Always use braces, even when statement body is a single line.    
-19. Make all internal and private types static or sealed unless derivation from them is required.  As with any implementation detail, they can be changed if/when derivation is required in the future.
+18. Make all internal and private types static or sealed unless derivation from them is required.  As with any implementation detail, they can be changed if/when derivation is required in the future.
 
 Whitespaces
 1. A maximum of one statement per line.
