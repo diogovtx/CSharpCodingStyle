@@ -33,7 +33,7 @@ An [EditorConfig](https://editorconfig.org "EditorConfig homepage") file (`.edit
 
 ### Example File:
 
-``ObservableLinkedList`1.cs:``
+``ObservableLinkedList.cs:``
 
 ```C#
 using System;
@@ -98,7 +98,7 @@ namespace System.Collections.Generic
 }
 ```
 
-``ObservableLinkedList`1.ObservableLinkedListNode.cs:``
+``ObservableLinkedList.Node.cs:``
 
 ```C#
 using System;
