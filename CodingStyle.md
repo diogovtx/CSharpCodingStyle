@@ -1,6 +1,7 @@
 C# Coding Style
 ===============
 
+General Rules
 1. We use [Allman style](http://en.wikipedia.org/wiki/Indent_style#Allman_style) braces, where each brace begins on a new line. However, we enforce braces even on single line statements. One exception is that a `using` statement is permitted to be nested within another `using` statement by starting on the following line at the same indentation level, even if the nested `using` contains a controlled block.
 2. We use one tab for indentation.
 3. We use `m_camelCase` for internal and private fields and use `readonly` where possible. Prefix internal and private instance fields with `m_`, static fields with `s_` and thread static fields with `t_`. When used on static fields, `readonly` should come after `static` (e.g. `static readonly` not `readonly static`).  Public fields should be used sparingly and should use PascalCasing with no prefix when used.
@@ -29,7 +30,56 @@ C# Coding Style
     - Always use braces, even when statement body is a single line.    
 19. Make all internal and private types static or sealed unless derivation from them is required.  As with any implementation detail, they can be changed if/when derivation is required in the future.
 
+Whitespaces
+1. A maximum of one statement per line.
+2. A maximum of one assignment per statement.
+3. Indentation using 1 tab.
+4. Column limit: 150
+5. Line break before opening brace.
+6. Line break between closing brace and else.
+7. Braces used even when optional.
+8. Space after if/for/while etc., and after commas.
+9. Space after an opening parenthesis and before closing.
+10. Space after an opening square bracket and before closing.
+11. Space between a unary operator and its operand. One space between the operator and each operand of all other operators.
+12. Line continuations are indented.
+13. Line breaks with braces (e.g. list initializers, lambdas, object initializers, etc) do not count as continuations.
+14. For function definitions and calls, if the arguments do not all fit on one line they should be broken up onto multiple lines, with each subsequent line aligned with the first argument. If there is not enough room for this, arguments may instead be placed on subsequent lines with a four space indent.
+
 An [EditorConfig](https://editorconfig.org "EditorConfig homepage") file (`.editorconfig`) has been provided at the root of the runtime repository, enabling C# auto-formatting conforming to the above guidelines.
+
+### Example Enum:
+
+```
+enum Days
+{
+	Saturday,
+	Sunday,
+	Monday,
+	...
+};
+```
+
+### Example Preprocessor Symbols and Conditionals:
+
+```
+#define DEBUG
+#define FAST
+
+class MyClass
+{
+#if DEBUG
+	int func( int x )
+	{
+	#if FAST
+		...
+	#else
+		...
+	#endif
+	}
+#endif
+}
+```
 
 ### Example File:
 
