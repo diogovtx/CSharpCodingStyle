@@ -1,9 +1,9 @@
 C# Coding Style
 ===============
 
-1. We use [Allman style](http://en.wikipedia.org/wiki/Indent_style#Allman_style) braces, where each brace begins on a new line. A single line statement block can go without braces but the block must be properly indented on its own line and must not be nested in other statement blocks that use braces (See rule 18 for more details). One exception is that a `using` statement is permitted to be nested within another `using` statement by starting on the following line at the same indentation level, even if the nested `using` contains a controlled block.
+1. We use [Allman style](http://en.wikipedia.org/wiki/Indent_style#Allman_style) braces, where each brace begins on a new line. However, we enforce braces even on single line statements. One exception is that a `using` statement is permitted to be nested within another `using` statement by starting on the following line at the same indentation level, even if the nested `using` contains a controlled block.
 2. We use one tab for indentation.
-3. We use `m_camelCase` for internal and private fields and use `readonly` where possible. Prefix internal and private instance fields with `_`, static fields with `s_` and thread static fields with `t_`. When used on static fields, `readonly` should come after `static` (e.g. `static readonly` not `readonly static`).  Public fields should be used sparingly and should use PascalCasing with no prefix when used.
+3. We use `m_camelCase` for internal and private fields and use `readonly` where possible. Prefix internal and private instance fields with `m_`, static fields with `s_` and thread static fields with `t_`. When used on static fields, `readonly` should come after `static` (e.g. `static readonly` not `readonly static`).  Public fields should be used sparingly and should use PascalCasing with no prefix when used.
 4. We avoid `this.` unless absolutely necessary.
 5. We always specify the visibility, even if it's the default (e.g.
    `private string m_foo` not `string m_foo`). Visibility should be the first modifier (e.g.
@@ -53,7 +53,7 @@ namespace System.Collections.Generic
 		
 		public int Count 
 		{
-			get { return _count; }
+			get { return m_count; }
 		}
 		
 		public event NotifyCollectionChangedEventHandler CollectionChanged;
@@ -73,7 +73,7 @@ namespace System.Collections.Generic
 
 		public ObservableLinkedListNode AddLast( T value )
 		{
-			var newNode = new LinkedListNode<T>( this, value );
+			var node = new LinkedListNode<T>( this, value );
 			
 			InsertNodeBefore( m_head, node );
 		}
@@ -81,6 +81,7 @@ namespace System.Collections.Generic
 		protected virtual void OnCollectionChanged( NotifyCollectionChangedEventArgs e )
 		{
 			NotifyCollectionChangedEventHandler handler = CollectionChanged;
+			
 			if ( handler != null )
 			{
 				handler( this, e );
@@ -113,7 +114,7 @@ namespace System.Collections.Generics
 			
 			public T Value
 			{
-				get { return _value; }
+				get { return m_value; }
 			}
 
 			internal ObservableLinkedListNode( ObservableLinkedList<T> parent, T value )
