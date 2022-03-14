@@ -4,7 +4,7 @@ C# Coding Style
 General Rules
 1. We use [Allman style](http://en.wikipedia.org/wiki/Indent_style#Allman_style) braces, where each brace begins on a new line. However, we enforce braces even on single line statements. One exception is that a `using` statement is permitted to be nested within another `using` statement by starting on the following line at the same indentation level, even if the nested `using` contains a controlled block.
 2. We use one tab for indentation.
-3. We use `m_camelCase` for internal and private fields and use `readonly` where possible. Prefix internal and private instance fields with `m_`, static fields with `s_` and thread static fields with `t_`. When used on static fields, `readonly` should come after `static` (e.g. `static readonly` not `readonly static`).  Public fields should be used sparingly and should use PascalCasing with no prefix when used.
+3. We use `m_camelCase` for internal and private fields and use `readonly` where possible. Prefix internal and private instance fields with `m_`, static fields with `s_`, constant fields with `k_` and thread static fields with `t_`. When used on static fields, `readonly` should come after `static` (e.g. `static readonly` not `readonly static`).  Public fields should be used sparingly and should use PascalCasing with no prefix when used.
 4. We avoid `this.` unless absolutely necessary.
 5. We always specify the visibility, even if it's the default (e.g.
    `private string m_foo` not `string m_foo`). Visibility should be the first modifier (e.g.
